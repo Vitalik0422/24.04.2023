@@ -3,7 +3,7 @@ const server = express()
 const ejs = require('ejs')
 const productRouter = require('./routes/product')
 
-const PORT = 8889;
+const PORT = 8887;
 
 server.set('view engine', 'ejs')
 server.set('views',__dirname + '/views');

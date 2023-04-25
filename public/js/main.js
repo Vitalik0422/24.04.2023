@@ -3,9 +3,12 @@ const list = document.querySelector('.list')
 const filter_none = document.querySelector('.filter_none')
 const run = async () =>{
     const product = await axios.get('/product')
+    console.log(product);
     product.data.forEach(element => {
         list.innerHTML += `<div class='product'>${element.name}
-        <img src="${element.img}"></div>`
+        ціна:${element.price}
+        <img src="${element.img}">
+        </div>`
     })
 }
 
@@ -29,8 +32,11 @@ const filter = async () => {
             q: sel_filter.value
         }
     })
+    console.log(product.data)
     const name = product.data.forEach(element => {
-        list.innerHTML += list.innerHTML += `<div class='product'>${element.name}
-        <img src="${element.img}"></div>`
+        list.innerHTML += `<div class='product'>${element.name}
+        ціна:${element.price}
+        <img src="${element.img}">
+        </div>`
     })
 }
